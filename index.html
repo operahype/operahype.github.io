@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>FOR THE HYPE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@font-face {
+  font-family: 'Courier New', Courier, monospace;
+/*  src: url(Ottodidact.ttf);*/
+}
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  margin: 0; 
+  height: 100%; 
+  overflow: hidden
+}
+#container{
+  min-height: 100%;
+}
+
+#main{
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
+
+  h1 {
+         position: relative;
+         color: white;
+ /*        left: 100px;*/
+         font-size: 40px;
+         font-family: 'Courier New', Courier, monospace;
+      }
+  iframe{
+    position: absolute;
+    border: none;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  top: 100px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.hide {
+  display:none;
+}
+
+.app{
+background: none;
+  transition: all 1s linear;
+}
+.visuallyhidden {
+  opacity: 0;
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 2px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 2px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+   text-align: center;
+   color: white;
+}
+
+.base-timer__path-remaining.green {
+  color: whitesmoke;
+}
+
+/*.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}*/
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color:white;
+}
+</style>
+</head>
+<body>
+
+<h1 align="middle">OPERA HYPE</h1>
+<div align="center" class="app " id="app"></div>
+
+
+<div align="middle"> <iframe class="video hide" id="video"  src="https://www.youtube.com/embed/K3KL4PPFLMs?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen scrolling="no" > </iframe>
+</div>
+    <script>
+
+    // Selecting the iframe element
+
+    var iframe = document.getElementById("video");
+
+    
+
+    // Adjusting the iframe height onload event
+
+    iframe.onload = function(){
+
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+
+    }
+
+    </script>
+
+<script src="timer.js"></script> 
+<script> 
+setTimeout(function(){
+ document.getElementById('app').classList.add('visuallyhidden');
+}, 5000);
+setTimeout(function(){
+ document.getElementById('app').classList.add('hide');
+}, 6400);
+setTimeout(function(){
+ document.getElementById('video').classList.remove('hide');
+}, 6410);
+</script>
+<footer>
+  <p align:middle><br>
+</footer>
+
+
+</body>
+</html>
