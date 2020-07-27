@@ -10,7 +10,8 @@
          background-color: black;
          margin: 0; 
          height: 100%; 
-         overflow: hidden
+         overflow: hidden;
+         text-align: center; 
          }
 
          #container{
@@ -24,13 +25,15 @@
 
          h1 {
          position: relative;
+         text-align: center;
          color: white;
-         /*        left: 100px;*/
          font-size: 40px;
          font-family: 'Courier New', Courier, monospace;
-         font-style: bold;
-         transition: all 2s linear;
+         font-style: normal;
+         overflow: hidden;
+         white-space: nowrap;
          }
+
 
          iframe {
          position: absolute;
@@ -45,11 +48,15 @@
 
          footer {
          position:fixed;
-         left:0px;
+         left:42%;
          bottom:0px;
          width:100%;
          text-align: center;
          color: white;
+         white-space: nowrap;
+         overflow: hidden;
+         margin: 0 auto;
+         font-size:13px;
          }
 
          .base-timer {
@@ -93,6 +100,31 @@
          fill: none;
          stroke: none;
          }
+         /* Animation */
+         .anim-typewriter{
+           animation: typewriter 1s steps(10) 2s 1 normal both;
+         }
+         .anim-typewriterfoot{
+           animation: typewriter 1s steps(31) 2s 1 normal both;
+         }
+         @keyframes typewriter{
+           from{width: 0;}
+           to{width: 24em;}
+         }
+         .line-1{
+             position: relative;
+             top: 50%;  
+             width: 24em;
+             margin: 0 auto;
+             border-right: 2px solid black;
+             color: white;
+             font-size: 50px;
+             text-align: center;
+             white-space: nowrap;
+             overflow: hidden;
+         }
+
+
 
          .base-timer__path-elapsed {
          stroke-width: 1px;
@@ -127,15 +159,17 @@
 
          .demo{
            font-size:15px;
+           animation: all 3s;
          }
 
       </style>
    </head>
    <body>
-      <h1 align="middle">
+      <h1 class="line-1 anim-typewriter" align="center">
           OPERA HYPE 
-         <p id="demo" class="demo"></p> 
-      </h1>
+         <p id="demo" class="demo hide"></p> 
+      </h1> 
+
       <div align="center" class="app" id="app"></div>
       <div align="middle"> <iframe class="video hide" id="video"  src="https://www.youtube.com/embed/ioeLMke-4cg?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen scrolling="no" > </iframe></div>
       <script>
@@ -158,6 +192,9 @@
          }, 2000);
          setTimeout(function(){
           document.getElementById('app').classList.add('hide');
+         }, 3000);
+         setTimeout(function(){
+          document.getElementById('demo').classList.remove('hide');
          }, 3000);
          setTimeout(function(){
           document.getElementById('video').classList.add('visuallyshown');
@@ -192,8 +229,8 @@
          }, 1000);
       </script>
 
-      <footer>
-         <p align:middle>Originated in Andravida, Greece<br>
+      <footer align="center" class="anim-typewriterfoot">
+         <p>Originated in Andravida, Greece</p>
       </footer>
 
    </body>
